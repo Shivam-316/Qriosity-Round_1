@@ -24,6 +24,8 @@
 	`This must include values for DEBUG, SECRET_KEY, RECAPTCHA_PUBLIC_KEY and RECAPTCHA_PRIVATE_KEY.`
 
 5. Run server.
+
 	`python manage.py runserver`
+
 
 Note: Sign Page is to be linked manually.
