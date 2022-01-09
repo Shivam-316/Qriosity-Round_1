@@ -7,7 +7,7 @@
 
 	`git clone https://github.com/Shivam-316/Quriosity-Round_1.git`
 
-2. Create virtual eniviroment (*I am using pipenv here*) & install all dependencies.
+2. Create virtual eniviroment (I am using pipenv here) & install all dependencies.
 
 	`pipenv shell`
 
@@ -19,8 +19,11 @@
 
 	`python manage.py migrate`
 
-4. Run server.
+4. Add your own .env file in project folder (simpleQuiz2 here).
 
+	`This must include values for DEBUG, SECRET_KEY, RECAPTCHA_PUBLIC_KEY and RECAPTCHA_PRIVATE_KEY.`
+
+5. Run server.
 	`python manage.py runserver`
 
-Note: Signup Page is to be linked manually.
+Note: Sign Page is to be linked manually.
