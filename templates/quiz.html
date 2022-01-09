@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+      <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+{% endblock style %}
+{% block content %}
+<div class="grid">
+  <div class="story">
+    <div id="response" class="mt-1" style="text-align: center;"></div>
+    <h2 class="text" style="text-align:center">{{ question.text }}</h2>
+  </div>
+  <!--<div class="assets">
+    <h4>Assests</h4>
+    <div class="py-2" style="text-align:center;">
+      <a target="__blanc" href="{{ assets }}">Get Required Assets.</a>
+    </div>
+  </div>-->
+  <div class="answer">
+    <div class="input-group mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Answer: </span>
+        </div>
+        <input id="temp-ans" type="text" class="form-control" placeholder="Enter Your Answer Here..." aria-label="Enter Your Answer Here..." aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary check" type="button" id="button-addon2">Check</button>
+        </div>
+    </div>
+    <form id="answer-form" action="{% url 'quiz' %}" method="POST" style="display: none;">{% csrf_token %}
+        {{ form }}
+    </form>
+  </div>
+</div>
+{% endblock content %}
+{% block script %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}

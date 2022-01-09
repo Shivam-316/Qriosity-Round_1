@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/instructions.css' %}">
+{% endblock style %}
+{% block content %}
+  <h1 class="text-center mb-5">Instructions</h1>
+  <div class="row justify-content-center">
+  <ul class="list">
+    <li>Register yourself on the QRIOSITY website to access the questions. </li>
+
+    <li>Each question is a list of hints directing to a certain term or company or software, everything related to the technical world. You're free to use the internet, go crazy.</li>
+
+    <li>24 hours will be allotted (starting at 5 PM, 27/03/2021) to complete the whole round.</li>
+
+    <li>Write your answer in the given box. If the answer is correct, you’ll be allowed to move to the next question.</li>
+
+    <li>Answers are not case sensitive.</li>
+
+    <li>The answer can contain numerals too. For example, if the answer is “4chan”, it is to be submitted as “4chan” only.</li>
+
+    <li>Ranks can be viewed on the real time leaderboard. The leaderboard is updated every time a submission is made.</li>
+
+    <li>Remember, once the timer starts, it can't be paused. </li>
+  </ul>
+  </div>
+  {% if not user.is_authenticated %}
+    <a href="{% url 'login' %}"><button class="login_button">Login</button></a>
+  {% else %}
+    <a href="{% url 'quiz' %}"><button class="login_button">Quiz</button></a>
+  {% endif %}
+{% endblock content %}
